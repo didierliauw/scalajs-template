@@ -14,5 +14,5 @@ Will run a server that binds to localhost on port 8080
 ## Generating the javascript application
 
 ```
-sbt scalaJSProjectJs/fastOptJS
+sbt scalaJsProjectJS/fastOptJS
 ```
