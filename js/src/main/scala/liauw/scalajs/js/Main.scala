@@ -1,8 +1,8 @@
-package liauw.scalajs
+package liauw.scalajs.js
+
+import liauw.scalajs.js.games.Snake
 
 import scala.scalajs.js.JSApp
-
-import liauw.scalajs.games.Snake
 
 object Main extends JSApp {
   def main(): Unit = {

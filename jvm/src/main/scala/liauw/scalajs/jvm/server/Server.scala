@@ -1,4 +1,4 @@
-package liauw.scalajs.server
+package liauw.scalajs.jvm.server
 
 import akka.actor._
 import akka.http.scaladsl._

@@ -1,4 +1,4 @@
-package liauw.scalajs.util
+package liauw.scalajs.js.util
 
 import org.scalajs.dom
 import org.scalajs.dom.Node

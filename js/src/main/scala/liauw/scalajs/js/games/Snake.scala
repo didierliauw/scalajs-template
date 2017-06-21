@@ -1,4 +1,4 @@
-package liauw.scalajs.games
+package liauw.scalajs.js.games
 
 import org.scalajs.dom
 import org.scalajs.dom.CanvasRenderingContext2D
