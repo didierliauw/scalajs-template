@@ -1,13 +1,14 @@
 package liauw.scalajs.jvm.util
 
-import ActorGraphStage.GraphStageStarted
+import ActorGraphStage.{ GraphStageStarted, WSMessage }
 import akka.actor.ActorRef
-import akka.http.scaladsl.model.ws.{Message, TextMessage}
+import akka.http.scaladsl.model.ws.{ Message, TextMessage }
 import akka.stream._
 import akka.stream.stage._
 
 object ActorGraphStage {
   case class GraphStageStarted(graphStageActor: ActorRef)
+  case class WSMessage(text: String)
 }
 
 class ActorGraphStage(val handlerActor: ActorRef) extends GraphStage[FlowShape[Message,Message]] {
@@ -34,7 +35,7 @@ class ActorGraphStage(val handlerActor: ActorRef) extends GraphStage[FlowShape[M
       setHandler(in, new InHandler {
         override def onPush(): Unit = {
           val message = grab(in)
-          handlerActor ! message.asTextMessage.getStrictText
+          handlerActor ! WSMessage(message.asTextMessage.getStrictText)
           if(!hasBeenPulled(in)) pull(in)
         }
       })
